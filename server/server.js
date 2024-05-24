@@ -6,16 +6,16 @@ const app = express();
 const server = http.createServer(app);
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const io = socketIo(server, {
     cors: {
-        origin: "http://localhost:3001", // Update this to match your client URL
+        origin: "http://localhost:3000", // Update this to match your client URL
         methods: ["GET", "POST"]
     }
 });
 
 app.use(cors({
-    origin: "http://localhost:3001", // Update this to match your client URL
+    origin: "http://localhost:3000", // Update this to match your client URL
 }));
 io.on('connection', (socket) => {
     console.log('New client connected');
